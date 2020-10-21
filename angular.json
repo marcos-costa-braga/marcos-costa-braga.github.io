@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "marcos-costa-braga": {
+    "marcos-costa-braga.github.io": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/marcos-costa-braga",
+            "outputPath": "dist/marcos-costa-braga.github.io",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "marcos-costa-braga:build"
+            "browserTarget": "marcos-costa-braga.github.io:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "marcos-costa-braga:build:production"
+              "browserTarget": "marcos-costa-braga.github.io:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "marcos-costa-braga:build"
+            "browserTarget": "marcos-costa-braga.github.io:build"
           }
         },
         "test": {
@@ -114,15 +114,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "marcos-costa-braga:serve"
+            "devServerTarget": "marcos-costa-braga.github.io:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "marcos-costa-braga:serve:production"
+              "devServerTarget": "marcos-costa-braga.github.io:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "marcos-costa-braga"
+    }
+  },
+  "defaultProject": "marcos-costa-braga.github.io"
 }
